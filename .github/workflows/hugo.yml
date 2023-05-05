@@ -1,9 +1,10 @@
+# Sample workflow for building and deploying a Hugo site to GitHub Pages
 name: Deploy Hugo site to Pages
 
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["main", "gh-pages"]
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -40,22 +41,22 @@ jobs:
         run: sudo snap install dart-sass-embedded
       - name: Checkout
         uses: actions/checkout@v3
-        # with:
-          # submodules: recursive
         with:
-          ref: gh-pages
+          submodules: recursive
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v1
-      - name: Get Theme
-        run: git submodule update --init --recursive
-      - name: Update theme to Latest commit
-        run: git submodule update --remote --merge
+        uses: actions/configure-pages@v3
+      - name: Install Node.js dependencies
+        run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
       - name: Build with Hugo
+        env:
+          # For maximum backward compatibility with Hugo modules
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
         run: |
           hugo \
-            --buildDrafts --gc --verbose \
-            --baseURL ${{ steps.pages.outputs.base_url }}
+            --minify \
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
