@@ -1,7 +1,7 @@
 baseURL: "https://aurorawxm.github.io/"
 title: AuroraWxm
 paginate: 5
-theme: PaperMod
+theme: hugo-PaperMod
 
 enableRobotsTXT: true
 buildDrafts: false
