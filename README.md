@@ -41,5 +41,5 @@ editPost:
 ```
 
 ```bash
-hugo new --kind post <name>
+hugo new --kind post posts/<name>
 ```
