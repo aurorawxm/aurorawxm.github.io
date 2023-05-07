@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>AuroraWxm</title>
+    <link>https://aurorawxm.github.io/</link>
+    <description>Recent content on AuroraWxm</description>
+    <image>
+      <title>AuroraWxm</title>
+      <url>https://aurorawxm.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://aurorawxm.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 06 May 2023 06:08:14 +0000</lastBuildDate><atom:link href="https://aurorawxm.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>10. Maps</title>
+      <link>https://aurorawxm.github.io/posts/10.-maps/</link>
+      <pubDate>Sat, 06 May 2023 06:08:14 +0000</pubDate>
+      
+      <guid>https://aurorawxm.github.io/posts/10.-maps/</guid>
+      <description>package main import &amp;#34;fmt&amp;#34; func main() { s := make([]string, 3) fmt.Println(&amp;#34;emp:&amp;#34;, s) s[0] = &amp;#34;a&amp;#34; s[1] = &amp;#34;b&amp;#34; s[2] = &amp;#34;c&amp;#34; fmt.Println(&amp;#34;set:&amp;#34;, s) fmt.Println(&amp;#34;get:&amp;#34;, s[2]) fmt.Println(&amp;#34;len:&amp;#34;, len(s)) s = append(s, &amp;#34;d&amp;#34;) s = append(s, &amp;#34;e&amp;#34;, &amp;#34;f&amp;#34;) fmt.Println(&amp;#34;apd:&amp;#34;, s) c := make([]string, len(s)) copy(c, s) fmt.Println(&amp;#34;cpy:&amp;#34;, c) l := s[2:5] fmt.Println(&amp;#34;sl1:&amp;#34;, l) l = s[:5] fmt.Println(&amp;#34;sl2:&amp;#34;, l) l = s[2:] fmt.Println(&amp;#34;sl3:&amp;#34;, l) t := []string{&amp;#34;g&amp;#34;, &amp;#34;h&amp;#34;, &amp;#34;i&amp;#34;} fmt.Println(&amp;#34;dcl:&amp;#34;, t) twoD := make([][]int, 3) for i := 0; i &amp;lt; 3; i++ { innerLen := i + 1 twoD[i] = make([]int, innerLen) for j := 0; j &amp;lt; innerLen; j++ { twoD[i][j] = i + j } } fmt.</description>
+    </item>
+    
+    <item>
+      <title>09. Slices</title>
+      <link>https://aurorawxm.github.io/posts/09.-slices/</link>
+      <pubDate>Sat, 06 May 2023 06:07:50 +0000</pubDate>
+      
+      <guid>https://aurorawxm.github.io/posts/09.-slices/</guid>
+      <description>package main import &amp;#34;fmt&amp;#34; func main() { s := make([]string, 3) fmt.Println(&amp;#34;emp:&amp;#34;, s) s[0] = &amp;#34;a&amp;#34; s[1] = &amp;#34;b&amp;#34; s[2] = &amp;#34;c&amp;#34; fmt.Println(&amp;#34;set:&amp;#34;, s) fmt.Println(&amp;#34;get:&amp;#34;, s[2]) fmt.Println(&amp;#34;len:&amp;#34;, len(s)) s = append(s, &amp;#34;d&amp;#34;) s = append(s, &amp;#34;e&amp;#34;, &amp;#34;f&amp;#34;) fmt.Println(&amp;#34;apd:&amp;#34;, s) c := make([]string, len(s)) copy(c, s) fmt.Println(&amp;#34;cpy:&amp;#34;, c) l := s[2:5] fmt.Println(&amp;#34;sl1:&amp;#34;, l) l = s[:5] fmt.Println(&amp;#34;sl2:&amp;#34;, l) l = s[2:] fmt.Println(&amp;#34;sl3:&amp;#34;, l) t := []string{&amp;#34;g&amp;#34;, &amp;#34;h&amp;#34;, &amp;#34;i&amp;#34;} fmt.Println(&amp;#34;dcl:&amp;#34;, t) twoD := make([][]int, 3) for i := 0; i &amp;lt; 3; i++ { innerLen := i + 1 twoD[i] = make([]int, innerLen) for j := 0; j &amp;lt; innerLen; j++ { twoD[i][j] = i + j } } fmt.</description>
+    </item>
+    
+    <item>
+      <title>08. Arrays</title>
+      <link>https://aurorawxm.github.io/posts/08.-arrays/</link>
+      <pubDate>Sat, 06 May 2023 06:07:25 +0000</pubDate>
+      
+      <guid>https://aurorawxm.github.io/posts/08.-arrays/</guid>
+      <description>package main import ( &amp;#34;fmt&amp;#34; &amp;#34;time&amp;#34; ) func main() { i := 2 fmt.Print(&amp;#34;Write &amp;#34;, i, &amp;#34; as &amp;#34;) switch i { case 1: fmt.Println(&amp;#34;one&amp;#34;) case 2: fmt.Println(&amp;#34;two&amp;#34;) case 3: fmt.Println(&amp;#34;three&amp;#34;) } switch time.Now().Weekday() { case time.Saturday, time.Sunday: fmt.Println(&amp;#34;It&amp;#39;s the weekend&amp;#34;) default: fmt.Println(&amp;#34;It&amp;#39;s a weekday&amp;#34;) } t := time.Now() switch { case t.Hour() &amp;lt; 12: fmt.Println(&amp;#34;It&amp;#39;s before noon&amp;#34;) default: fmt.Println(&amp;#34;It&amp;#39;s after noon&amp;#34;) } whatAmI := func(i interface{}) { switch t := i.</description>
+    </item>
+    
+    <item>
+      <title>07. Switch</title>
+      <link>https://aurorawxm.github.io/posts/07.-switch/</link>
+      <pubDate>Sat, 06 May 2023 06:06:57 +0000</pubDate>
+      
+      <guid>https://aurorawxm.github.io/posts/07.-switch/</guid>
+      <description>package main import ( &amp;#34;fmt&amp;#34; &amp;#34;time&amp;#34; ) func main() { i := 2 fmt.Print(&amp;#34;Write &amp;#34;, i, &amp;#34; as &amp;#34;) switch i { case 1: fmt.Println(&amp;#34;one&amp;#34;) case 2: fmt.Println(&amp;#34;two&amp;#34;) case 3: fmt.Println(&amp;#34;three&amp;#34;) } switch time.Now().Weekday() { case time.Saturday, time.Sunday: fmt.Println(&amp;#34;It&amp;#39;s the weekend&amp;#34;) default: fmt.Println(&amp;#34;It&amp;#39;s a weekday&amp;#34;) } t := time.Now() switch { case t.Hour() &amp;lt; 12: fmt.Println(&amp;#34;It&amp;#39;s before noon&amp;#34;) default: fmt.Println(&amp;#34;It&amp;#39;s after noon&amp;#34;) } whatAmI := func(i interface{}) { switch t := i.</description>
+    </item>
+    
+    <item>
+      <title>06.If_Else</title>
+      <link>https://aurorawxm.github.io/posts/06.-if_else/</link>
+      <pubDate>Sat, 06 May 2023 06:06:11 +0000</pubDate>
+      
+      <guid>https://aurorawxm.github.io/posts/06.-if_else/</guid>
+      <description>package main import &amp;#34;fmt&amp;#34; func main() { if 7%2 == 0 { fmt.Println(&amp;#34;7 is even&amp;#34;) } else { fmt.Println(&amp;#34;7 is odd&amp;#34;) } if 8%4 == 0 { fmt.Println(&amp;#34;8 is divisible by 4&amp;#34;) } if num := 9; num &amp;lt; 0 { fmt.Println(num, &amp;#34;is negative&amp;#34;) } else if num &amp;lt; 10 { fmt.Println(num, &amp;#34;has 1 digit&amp;#34;) } else { fmt.Println(num, &amp;#34;has multiple digits&amp;#34;) } } </description>
+    </item>
+    
+    <item>
+      <title>05. for</title>
+      <link>https://aurorawxm.github.io/posts/05.-for/</link>
+      <pubDate>Sat, 06 May 2023 06:05:30 +0000</pubDate>
+      
+      <guid>https://aurorawxm.github.io/posts/05.-for/</guid>
+      <description>package main import &amp;#34;fmt&amp;#34; func main() { i := 1 for i &amp;lt;= 3 { fmt.Println(i) i = i + 1 } for j := 7; j &amp;lt;= 9; j++ { fmt.Println(j) } for { fmt.Println(&amp;#34;loop&amp;#34;) break } for n := 0; n &amp;lt;= 5; n++ { if n%2 == 0 { continue } fmt.Println(n) } } </description>
+    </item>
+    
+    <item>
+      <title>04. Constants</title>
+      <link>https://aurorawxm.github.io/posts/04.-constants/</link>
+      <pubDate>Sat, 06 May 2023 06:03:54 +0000</pubDate>
+      
+      <guid>https://aurorawxm.github.io/posts/04.-constants/</guid>
+      <description>package main import ( &amp;#34;fmt&amp;#34; &amp;#34;math&amp;#34; ) const s string = &amp;#34;constant&amp;#34; func main() { fmt.Println(s) const n = 500000000 const d = 3e20 / n fmt.Println(d) fmt.Println(int64(d)) fmt.Println(math.Sin(n)) } </description>
+    </item>
+    
+    <item>
+      <title>03. variables</title>
+      <link>https://aurorawxm.github.io/posts/03.-variables/</link>
+      <pubDate>Sat, 06 May 2023 06:03:25 +0000</pubDate>
+      
+      <guid>https://aurorawxm.github.io/posts/03.-variables/</guid>
+      <description>package main import &amp;#34;fmt&amp;#34; func main() { var a = &amp;#34;initial&amp;#34; fmt.Println(a) var b, c int = 1, 2 fmt.Println(b, c) var d = true fmt.Println(d) var e int fmt.Println(e) f := &amp;#34;apple&amp;#34; fmt.Println(f) } </description>
+    </item>
+    
+    <item>
+      <title>02. values.md</title>
+      <link>https://aurorawxm.github.io/posts/02.-values/</link>
+      <pubDate>Sat, 06 May 2023 06:02:49 +0000</pubDate>
+      
+      <guid>https://aurorawxm.github.io/posts/02.-values/</guid>
+      <description>package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(&amp;#34;go&amp;#34; + &amp;#34;lang&amp;#34;) fmt.Println(&amp;#34;1+1 =&amp;#34;, 1+1) fmt.Println(&amp;#34;7.0/3.0 =&amp;#34;, 7.0/3.0) fmt.Println(true &amp;amp;&amp;amp; false) fmt.Println(true || false) fmt.Println(!true) } </description>
+    </item>
+    
+    <item>
+      <title>The Red Thread Emperor</title>
+      <link>https://aurorawxm.github.io/posts/chapter-1-the-red-thread-emperor/</link>
+      <pubDate>Sat, 06 May 2023 03:40:08 +0000</pubDate>
+      
+      <guid>https://aurorawxm.github.io/posts/chapter-1-the-red-thread-emperor/</guid>
+      <description>ChatGPT
+Chapter 1: The Red Thread Emperor
+On a moonlit night in the twelfth year of the prosperous reign of Emperor Ming Sheng of the Great Qi Dynasty, the Emperor had a dream. The God of Marriage appeared in his dream and presented him with a red thread of destiny. The imperial attendants, upon hearing this, exchanged glances and exclaimed, &amp;ldquo;Congratulations, Your Majesty! It seems the immortal intends to bless you with another auspicious union!</description>
+    </item>
+    
+    <item>
+      <title>01. hello world</title>
+      <link>https://aurorawxm.github.io/posts/01.-hello-world/</link>
+      <pubDate>Fri, 05 May 2023 07:03:48 +0000</pubDate>
+      
+      <guid>https://aurorawxm.github.io/posts/01.-hello-world/</guid>
+      <description>package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(&amp;#34;hello world&amp;#34;) } </description>
+    </item>
+    
+  </channel>
+</rss>
