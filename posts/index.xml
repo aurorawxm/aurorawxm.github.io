@@ -10,7 +10,21 @@
       <link>https://aurorawxm.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 08 May 2023 14:43:20 +0000</lastBuildDate><atom:link href="https://aurorawxm.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 May 2023 14:55:40 +0000</lastBuildDate><atom:link href="https://aurorawxm.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go 语言中的奇妙用途</title>
+      <link>https://aurorawxm.github.io/posts/go-%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%A5%87%E5%A6%99%E7%94%A8%E9%80%94/</link>
+      <pubDate>Mon, 08 May 2023 14:55:40 +0000</pubDate>
+      
+      <guid>https://aurorawxm.github.io/posts/go-%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%A5%87%E5%A6%99%E7%94%A8%E9%80%94/</guid>
+      <description>细说空结构体：Go 语言中的奇妙用途 在 Go 语言中，我们可以定义空结构体（empty struct），即没有任何成员变量的结构体，使用关键字 struct{} 来表示。这种结构体似乎没有任何用处，但实际上它在 Go 语言中的应用非常广泛，本文将从多个方面介绍空结构体的使用，让大家更好地理解它的作用。
+1. 空结构体的定义和初始化 空结构体是指不包含任何字段的结构体。在 Golang 中，可以使用 struct{} 来定义一个空结构体。下面是一个简单的示例：
+package main import &amp;#34;fmt&amp;#34; func main() { var s struct{} fmt.Printf(&amp;#34;%#v\n&amp;#34;, s) // 输出: struct {}{} } 在这个示例中，我们定义了一个名为s的变量，并将其初始化为一个空结构体。然后我们使用 fmt.Printf 将这个空结构体打印出来。注意，在打印时使用了 %#v 占位符，这个占位符可以将变量以 Go 语法格式输出。
+输出结果是 struct {}{}，这表示 s 是一个空结构体，不包含任何字段。需要注意的是，空结构体变量实际上不占用任何内存空间，也就是说，它的大小是 0 字节。
+2. 空结构体的大小和内存占用 正如上面提到的，空结构体的大小是 0 字节。这意味着它不占用任何内存空间。这一点可以通过使用 unsafe.Sizeof 函数来验证：
+package main import ( &amp;#34;fmt&amp;#34; &amp;#34;unsafe&amp;#34; ) func main() { var s struct{} fmt.Printf(&amp;#34;Size of struct{}: %v\n&amp;#34;, unsafe.</description>
+    </item>
+    
     <item>
       <title>Linux 进程调度详解</title>
       <link>https://aurorawxm.github.io/posts/linux-%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E8%AF%A6%E8%A7%A3/</link>
