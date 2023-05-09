@@ -10,7 +10,19 @@
       <link>https://aurorawxm.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 08 May 2023 14:55:40 +0000</lastBuildDate><atom:link href="https://aurorawxm.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 May 2023 05:47:00 +0000</lastBuildDate><atom:link href="https://aurorawxm.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go for 循环踩坑记录</title>
+      <link>https://aurorawxm.github.io/posts/go-for-%E5%BE%AA%E7%8E%AF%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Tue, 09 May 2023 05:47:00 +0000</pubDate>
+      
+      <guid>https://aurorawxm.github.io/posts/go-for-%E5%BE%AA%E7%8E%AF%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/</guid>
+      <description>案例一：取地址符 在 Go 语言中，我们写 for 语句时有时会出现运行和猜想的结果不一致。例如以下第一个案例的代码：
+var all []*Item for _, item := range items { all = append(all, &amp;amp;item) } 这段代码有问题吗？变量 all 内的 item 变量，存储进去的是什么？ 是每次循环的 item 值吗？ 实际上在 for 循环时，每次存入变量 all 的都是相同的 item，也就是最后一个循环的 item 值。 这是 Go 面试里经常出现的题目，结合 goroutine 更风骚，毕竟还会存在乱序输出等问题。 如果你想解决这个问题，就需要把程序改写成如下：
+var all []*Item for _, item := range items { item := item all = append(all, &amp;amp;item) } 要重新声明一个 item 变量把 for 循环的 item 变量给存储下来再追加进去。
+案例二：闭包函数 接下来是第二个案例的代码：</description>
+    </item>
+    
     <item>
       <title>Go 语言中的奇妙用途</title>
       <link>https://aurorawxm.github.io/posts/go-%E8%AF%AD%E8%A8%80%E4%B8%AD%E7%9A%84%E5%A5%87%E5%A6%99%E7%94%A8%E9%80%94/</link>
