@@ -1,0 +1,234 @@
+<!doctype html><html lang=en dir=auto><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Vue3+TS 使用指南 | AuroraWxm</title><meta name=keywords content><meta name=description content="vue3相比vue2对ts拥有更友好的支持，当初在用vue2写ts时各种装饰器，现在只要使用标签就可以直接使用ts。ts虽然写的时候麻烦了点，但是真的香。 如果不知道怎么搭建vue3的ts项目，可参考我的上一篇文章：Vite4.3+Typescript+Vue3+Pinia 最新搭建企业级前端项目
+ref 传入一个泛型参数 值 ref
+jsconst initCode = ref(&lsquo;200&rsquo;); //默认推导出string类型
+//或者手动定义更复杂的类型 const initCode = ref<string | number>(&lsquo;200&rsquo;);
+模板 ref
+js
+组件 ref
+js 如果子组件使用，默认是全关闭的，子组件需使用defineExpose定义父组件能访问的属性 2. reactive
+定义接口
+新建src/types/user.ts（在types文件夹下新建user.ts） jsexport interface User { name: string; age: number; }
+使用
+js import { reactive } from &lsquo;vue&rsquo;; import type { User } from &lsquo;@/types/user&rsquo;;
+//reactive 会隐式地从它的参数中推导类型 //也可以使用接口直接给变量定义类型 const user: User = reactive({ name: &lsquo;zhangsan&rsquo;, age: 20, }); 提示：不推荐使用 reactive() 的泛型参数，因为处理了深层次 ref 解包的返回值与泛型参数的类型不同 3."><meta name=author content="Me"><link rel=canonical href=https://aurorawxm.github.io/posts/vue3+ts-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/><link crossorigin=anonymous href=/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe+FVUFzPh7U=" rel="preload stylesheet" as=style><script defer crossorigin=anonymous src=/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG+9vmJ0cTS+ovo0FeA=" onload=hljs.initHighlightingOnLoad()></script>
+<link rel=icon href=https://aurorawxm.github.io/%3Clink%20/%20abs%20url%3E><link rel=icon type=image/png sizes=16x16 href=https://aurorawxm.github.io/%3Clink%20/%20abs%20url%3E><link rel=icon type=image/png sizes=32x32 href=https://aurorawxm.github.io/%3Clink%20/%20abs%20url%3E><link rel=apple-touch-icon href=https://aurorawxm.github.io/%3Clink%20/%20abs%20url%3E><link rel=mask-icon href=https://aurorawxm.github.io/%3Clink%20/%20abs%20url%3E><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--hljs-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51)}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><meta property="og:title" content="Vue3+TS 使用指南"><meta property="og:description" content="vue3相比vue2对ts拥有更友好的支持，当初在用vue2写ts时各种装饰器，现在只要使用标签就可以直接使用ts。ts虽然写的时候麻烦了点，但是真的香。 如果不知道怎么搭建vue3的ts项目，可参考我的上一篇文章：Vite4.3+Typescript+Vue3+Pinia 最新搭建企业级前端项目
+ref 传入一个泛型参数 值 ref
+jsconst initCode = ref(&lsquo;200&rsquo;); //默认推导出string类型
+//或者手动定义更复杂的类型 const initCode = ref<string | number>(&lsquo;200&rsquo;);
+模板 ref
+js
+组件 ref
+js 如果子组件使用，默认是全关闭的，子组件需使用defineExpose定义父组件能访问的属性 2. reactive
+定义接口
+新建src/types/user.ts（在types文件夹下新建user.ts） jsexport interface User { name: string; age: number; }
+使用
+js import { reactive } from &lsquo;vue&rsquo;; import type { User } from &lsquo;@/types/user&rsquo;;
+//reactive 会隐式地从它的参数中推导类型 //也可以使用接口直接给变量定义类型 const user: User = reactive({ name: &lsquo;zhangsan&rsquo;, age: 20, }); 提示：不推荐使用 reactive() 的泛型参数，因为处理了深层次 ref 解包的返回值与泛型参数的类型不同 3."><meta property="og:type" content="article"><meta property="og:url" content="https://aurorawxm.github.io/posts/vue3+ts-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"><meta property="og:image" content="https://aurorawxm.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-05-12T03:03:06+00:00"><meta property="article:modified_time" content="2023-05-12T03:03:06+00:00"><meta property="og:site_name" content="AuroraWxm"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://aurorawxm.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta name=twitter:title content="Vue3+TS 使用指南"><meta name=twitter:description content="vue3相比vue2对ts拥有更友好的支持，当初在用vue2写ts时各种装饰器，现在只要使用标签就可以直接使用ts。ts虽然写的时候麻烦了点，但是真的香。 如果不知道怎么搭建vue3的ts项目，可参考我的上一篇文章：Vite4.3+Typescript+Vue3+Pinia 最新搭建企业级前端项目
+ref 传入一个泛型参数 值 ref
+jsconst initCode = ref(&lsquo;200&rsquo;); //默认推导出string类型
+//或者手动定义更复杂的类型 const initCode = ref<string | number>(&lsquo;200&rsquo;);
+模板 ref
+js
+组件 ref
+js 如果子组件使用，默认是全关闭的，子组件需使用defineExpose定义父组件能访问的属性 2. reactive
+定义接口
+新建src/types/user.ts（在types文件夹下新建user.ts） jsexport interface User { name: string; age: number; }
+使用
+js import { reactive } from &lsquo;vue&rsquo;; import type { User } from &lsquo;@/types/user&rsquo;;
+//reactive 会隐式地从它的参数中推导类型 //也可以使用接口直接给变量定义类型 const user: User = reactive({ name: &lsquo;zhangsan&rsquo;, age: 20, }); 提示：不推荐使用 reactive() 的泛型参数，因为处理了深层次 ref 解包的返回值与泛型参数的类型不同 3."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://aurorawxm.github.io/posts/"},{"@type":"ListItem","position":2,"name":"Vue3+TS 使用指南","item":"https://aurorawxm.github.io/posts/vue3+ts-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"Vue3+TS 使用指南","name":"Vue3\u002bTS 使用指南","description":"vue3相比vue2对ts拥有更友好的支持，当初在用vue2写ts时各种装饰器，现在只要使用标签就可以直接使用ts。ts虽然写的时候麻烦了点，但是真的香。 如果不知道怎么搭建vue3的ts项目，可参考我的上一篇文章：Vite4.3+Typescript+Vue3+Pinia 最新搭建企业级前端项目\nref 传入一个泛型参数 值 ref\njsconst initCode = ref(\u0026lsquo;200\u0026rsquo;); //默认推导出string类型\n//或者手动定义更复杂的类型 const initCode = ref\u0026lt;string | number\u0026gt;(\u0026lsquo;200\u0026rsquo;);\n模板 ref\njs\n组件 ref\njs 如果子组件使用，默认是全关闭的，子组件需使用defineExpose定义父组件能访问的属性 2. reactive\n定义接口\n新建src/types/user.ts（在types文件夹下新建user.ts） jsexport interface User { name: string; age: number; }\n使用\njs import { reactive } from \u0026lsquo;vue\u0026rsquo;; import type { User } from \u0026lsquo;@/types/user\u0026rsquo;;\n//reactive 会隐式地从它的参数中推导类型 //也可以使用接口直接给变量定义类型 const user: User = reactive({ name: \u0026lsquo;zhangsan\u0026rsquo;, age: 20, }); 提示：不推荐使用 reactive() 的泛型参数，因为处理了深层次 ref 解包的返回值与泛型参数的类型不同 3.","keywords":[],"articleBody":"vue3相比vue2对ts拥有更友好的支持，当初在用vue2写ts时各种装饰器，现在只要使用标签就可以直接使用ts。ts虽然写的时候麻烦了点，但是真的香。 如果不知道怎么搭建vue3的ts项目，可参考我的上一篇文章：Vite4.3+Typescript+Vue3+Pinia 最新搭建企业级前端项目\nref 传入一个泛型参数 值 ref\njsconst initCode = ref(‘200’); //默认推导出string类型\n//或者手动定义更复杂的类型 const initCode = ref(‘200’);\n模板 ref\njs\n组件 ref\njs 如果子组件使用，默认是全关闭的，子组件需使用defineExpose定义父组件能访问的属性 2. reactive\n定义接口\n新建src/types/user.ts（在types文件夹下新建user.ts） jsexport interface User { name: string; age: number; }\n使用\njs import { reactive } from ‘vue’; import type { User } from ‘@/types/user’;\n//reactive 会隐式地从它的参数中推导类型 //也可以使用接口直接给变量定义类型 const user: User = reactive({ name: ‘zhangsan’, age: 20, }); 提示：不推荐使用 reactive() 的泛型参数，因为处理了深层次 ref 解包的返回值与泛型参数的类型不同 3. computed computed() 会自动从其计算函数的返回值上推导出类型 也可以通过泛型参数显式指定类型 jsconst age = computed(() =\u003e { return 2; });\ndefineProps（父传子） 定义props类型，直接使用，不需要import引入 运行时声明 类型作为参数的一部分传入 基本使用 运行时声明的类型共八大类：String，Number，Boolean，Array，Object，Date，Function，Symbol（注意这里和ts的类型有区别，例如ts中字符串类型为string，这里是String） 如果想为引用类型定义更具体的类型，需使用 PropType js 接口User由外部传入 js import type { User } from ‘@/types/user’; //将原先定义的接口注释掉 // interface User { // name: string; // age: number; // } 类型声明（使用泛型） 基本使用 使用泛型，不需要PropType定义更具体的类型 js 定义默认值 使用泛型，需要使用 withDefaults 定义默认值 js interface User { name: string; age: number; } const props = withDefaults(defineProps(), { name: ‘hello’, age: 10, }); 局限性 不能使用外部传入的类型（未来版本中可能会解决这个限制） jsimport type { User } from ‘@/types/user’; //将原先定义的接口注释掉 // interface User { // name: string; // age: number; // }\n报错\ndefineEmits（子传父） 定义emits类型 ，直接使用，不需要import引入 父组件 js 运行时声明 js 类型声明（使用泛型） 可以对所触发事件的类型进行更细粒度的控制。并且可以使用外部传入的类型 js defineExpose（父调用子） 定义父组件通过模板 ref 能获取到的属性 接着上面组件ref案例修改子组件HelloWorld js provide / inject（跨组件传值） key是Symbol 新建src/constant/index.ts jsimport type { InjectionKey } from ‘vue’; export const key = Symbol() as InjectionKey;\njs\nkey是字符串 inject返回的类型是 unknown，需要通过泛型参数显式声明 js undefined问题 由于无法保证provide会提供这个值，因此inject通过泛型参数显示声明了类型，还会多个undefined类型 提供默认值，可消除undefined\njsconst state = inject(‘info’, 20);\n使用类型断言，告诉编辑器这个值一定会提供\njsconst state = inject(‘info’) as number;\n事件类型 input change事件 js button Click事件 js 按钮 HTML标签映射关系 jsinterface HTMLElementTagNameMap { “a”: HTMLAnchorElement; “abbr”: HTMLElement; “address”: HTMLElement; “applet”: HTMLAppletElement; “area”: HTMLAreaElement; “article”: HTMLElement; “aside”: HTMLElement; “audio”: HTMLAudioElement; “b”: HTMLElement; “base”: HTMLBaseElement; “basefont”: HTMLBaseFontElement; “bdi”: HTMLElement; “bdo”: HTMLElement; “blockquote”: HTMLQuoteElement; “body”: HTMLBodyElement; “br”: HTMLBRElement; “button”: HTMLButtonElement; “canvas”: HTMLCanvasElement; “caption”: HTMLTableCaptionElement; “cite”: HTMLElement; “code”: HTMLElement; “col”: HTMLTableColElement; “colgroup”: HTMLTableColElement; “data”: HTMLDataElement; “datalist”: HTMLDataListElement; “dd”: HTMLElement; “del”: HTMLModElement; “details”: HTMLDetailsElement; “dfn”: HTMLElement; “dialog”: HTMLDialogElement; “dir”: HTMLDirectoryElement; “div”: HTMLDivElement; “dl”: HTMLDListElement; “dt”: HTMLElement; “em”: HTMLElement; “embed”: HTMLEmbedElement; “fieldset”: HTMLFieldSetElement; “figcaption”: HTMLElement; “figure”: HTMLElement; “font”: HTMLFontElement; “footer”: HTMLElement; “form”: HTMLFormElement; “frame”: HTMLFrameElement; “frameset”: HTMLFrameSetElement; “h1”: HTMLHeadingElement; “h2”: HTMLHeadingElement; “h3”: HTMLHeadingElement; “h4”: HTMLHeadingElement; “h5”: HTMLHeadingElement; “h6”: HTMLHeadingElement; “head”: HTMLHeadElement; “header”: HTMLElement; “hgroup”: HTMLElement; “hr”: HTMLHRElement; “html”: HTMLHtmlElement; “i”: HTMLElement; “iframe”: HTMLIFrameElement; “img”: HTMLImageElement; “input”: HTMLInputElement; “ins”: HTMLModElement; “kbd”: HTMLElement; “label”: HTMLLabelElement; “legend”: HTMLLegendElement; “li”: HTMLLIElement; “link”: HTMLLinkElement; “main”: HTMLElement; “map”: HTMLMapElement; “mark”: HTMLElement; “marquee”: HTMLMarqueeElement; “menu”: HTMLMenuElement; “meta”: HTMLMetaElement; “meter”: HTMLMeterElement; “nav”: HTMLElement; “noscript”: HTMLElement; “object”: HTMLObjectElement; “ol”: HTMLOListElement; “optgroup”: HTMLOptGroupElement; “option”: HTMLOptionElement; “output”: HTMLOutputElement; “p”: HTMLParagraphElement; “param”: HTMLParamElement; “picture”: HTMLPictureElement; “pre”: HTMLPreElement; “progress”: HTMLProgressElement; “q”: HTMLQuoteElement; “rp”: HTMLElement; “rt”: HTMLElement; “ruby”: HTMLElement; “s”: HTMLElement; “samp”: HTMLElement; “script”: HTMLScriptElement; “section”: HTMLElement; “select”: HTMLSelectElement; “slot”: HTMLSlotElement; “small”: HTMLElement; “source”: HTMLSourceElement; “span”: HTMLSpanElement; “strong”: HTMLElement; “style”: HTMLStyleElement; “sub”: HTMLElement; “summary”: HTMLElement; “sup”: HTMLElement; “table”: HTMLTableElement; “tbody”: HTMLTableSectionElement; “td”: HTMLTableDataCellElement; “template”: HTMLTemplateElement; “textarea”: HTMLTextAreaElement; “tfoot”: HTMLTableSectionElement; “th”: HTMLTableHeaderCellElement; “thead”: HTMLTableSectionElement; “time”: HTMLTimeElement; “title”: HTMLTitleElement; “tr”: HTMLTableRowElement; “track”: HTMLTrackElement; “u”: HTMLElement; “ul”: HTMLUListElement; “var”: HTMLElement; “video”: HTMLVideoElement; “wbr”: HTMLElement; }\n结尾 vue的ts分为运行时声明和类型声明，运行时声明是基于vue2延续并改进的，类型声明是基于ts的泛型实现的。个人更喜欢类型声明，更符合ts的书写规范，希望尤大早日将defineProps类型声明不能使用外部传入的类型问题早日解决 最后：本篇整理的内容基于vue3.2.47，vue3.3.0已经走的了alpha.8阶段。点赞多的话后续随着vue的升级继续更新本篇文章\n作者：敲代码的彭于晏 链接：https://juejin.cn/post/7231200657902207013 来源：稀土掘金 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。\n","wordCount":"485","inLanguage":"en","datePublished":"2023-05-12T03:03:06Z","dateModified":"2023-05-12T03:03:06Z","author":{"@type":"Person","name":"Me"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://aurorawxm.github.io/posts/vue3+ts-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"},"publisher":{"@type":"Organization","name":"AuroraWxm","logo":{"@type":"ImageObject","url":"https://aurorawxm.github.io/%3Clink%20/%20abs%20url%3E"}}}</script></head><body id=top><script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script><header class=header><nav class=nav><div class=logo><a href=https://aurorawxm.github.io/ accesskey=h title="Home (Alt + H)"><img src=https://aurorawxm.github.io/apple-touch-icon.png alt aria-label=logo height=35>Home</a><div class=logo-switches><button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu><li><a href=https://aurorawxm.github.io/categories/ title=categories><span>categories</span></a></li><li><a href=https://aurorawxm.github.io/tags/ title=tags><span>tags</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://aurorawxm.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://aurorawxm.github.io/posts/>Posts</a></div><h1 class=post-title>Vue3+TS 使用指南</h1><div class=post-meta><span title='2023-05-12 03:03:06 +0000 UTC'>May 12, 2023</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;485 words&nbsp;·&nbsp;Me</div></header><div class=post-content><p>vue3相比vue2对ts拥有更友好的支持，当初在用vue2写ts时各种装饰器，现在只要使用标签就可以直接使用ts。ts虽然写的时候麻烦了点，但是真的香。
+如果不知道怎么搭建vue3的ts项目，可参考我的上一篇文章：Vite4.3+Typescript+Vue3+Pinia 最新搭建企业级前端项目</p><ol><li>ref
+传入一个泛型参数</li></ol><p>值 ref</p><p>jsconst initCode = ref(&lsquo;200&rsquo;); //默认推导出string类型</p><p>//或者手动定义更复杂的类型
+const initCode = ref&lt;string | number>(&lsquo;200&rsquo;);</p><p>模板 ref</p><p>js</p><p>组件 ref</p><p>js</p><p>如果子组件使用，默认是全关闭的，子组件需使用defineExpose定义父组件能访问的属性
+2. reactive</p><p>定义接口</p><p>新建src/types/user.ts（在types文件夹下新建user.ts）
+jsexport interface User {
+name: string;
+age: number;
+}</p><p>使用</p><p>js
+import { reactive } from &lsquo;vue&rsquo;;
+import type { User } from &lsquo;@/types/user&rsquo;;</p><p>//reactive 会隐式地从它的参数中推导类型
+//也可以使用接口直接给变量定义类型
+const user: User = reactive({
+name: &lsquo;zhangsan&rsquo;,
+age: 20,
+});</p><p>提示：不推荐使用 reactive() 的泛型参数，因为处理了深层次 ref 解包的返回值与泛型参数的类型不同
+3. computed
+computed() 会自动从其计算函数的返回值上推导出类型
+也可以通过泛型参数显式指定类型
+jsconst age = computed(() => {
+return 2;
+});</p><ol start=4><li>defineProps（父传子）
+定义props类型，直接使用，不需要import引入</li><li>运行时声明
+类型作为参数的一部分传入</li><li>基本使用
+运行时声明的类型共八大类：String，Number，Boolean，Array，Object，Date，Function，Symbol（注意这里和ts的类型有区别，例如ts中字符串类型为string，这里是String）
+如果想为引用类型定义更具体的类型，需使用 PropType
+js</li></ol><ol start=2><li>接口User由外部传入
+js
+import type { User } from &lsquo;@/types/user&rsquo;;</li></ol><p>//将原先定义的接口注释掉
+// interface User {
+// name: string;
+// age: number;
+// }</p><ol start=2><li>类型声明（使用泛型）</li><li>基本使用
+使用泛型，不需要PropType定义更具体的类型
+js</li></ol><ol start=2><li>定义默认值
+使用泛型，需要使用 withDefaults 定义默认值
+js
+interface User {
+name: string;
+age: number;
+}</li></ol><p>const props = withDefaults(defineProps(), {
+name: &lsquo;hello&rsquo;,
+age: 10,
+});</p><ol start=3><li>局限性
+不能使用外部传入的类型（未来版本中可能会解决这个限制）
+jsimport type { User } from &lsquo;@/types/user&rsquo;;</li></ol><p>//将原先定义的接口注释掉
+// interface User {
+// name: string;
+// age: number;
+// }</p><p>报错</p><ol start=5><li>defineEmits（子传父）
+定义emits类型 ，直接使用，不需要import引入
+父组件
+js</li></ol><ol><li>运行时声明
+js</li></ol><ol start=2><li>类型声明（使用泛型）
+可以对所触发事件的类型进行更细粒度的控制。并且可以使用外部传入的类型
+js</li></ol><ol start=6><li>defineExpose（父调用子）
+定义父组件通过模板 ref 能获取到的属性
+接着上面组件ref案例修改子组件HelloWorld
+js</li></ol><ol start=7><li>provide / inject（跨组件传值）</li><li>key是Symbol
+新建src/constant/index.ts
+jsimport type { InjectionKey } from &lsquo;vue&rsquo;;</li></ol><p>export const key = Symbol() as InjectionKey;</p><p>js</p><ol start=2><li>key是字符串
+inject返回的类型是 unknown，需要通过泛型参数显式声明
+js</li></ol><ol start=3><li>undefined问题
+由于无法保证provide会提供这个值，因此inject通过泛型参数显示声明了类型，还会多个undefined类型</li></ol><p>提供默认值，可消除undefined</p><p>jsconst state = inject(&lsquo;info&rsquo;, 20);</p><p>使用类型断言，告诉编辑器这个值一定会提供</p><p>jsconst state = inject(&lsquo;info&rsquo;) as number;</p><ol start=8><li>事件类型</li><li>input change事件
+js
+&lt;input type=&ldquo;text&rdquo; @change=&ldquo;handleChange&rdquo; /></li></ol><ol start=2><li>button Click事件
+js
+&lt;button @click=&ldquo;handleClick&rdquo;>按钮</li></ol><ol start=3><li><p>HTML标签映射关系
+jsinterface HTMLElementTagNameMap {
+&ldquo;a&rdquo;: HTMLAnchorElement;
+&ldquo;abbr&rdquo;: HTMLElement;
+&ldquo;address&rdquo;: HTMLElement;
+&ldquo;applet&rdquo;: HTMLAppletElement;
+&ldquo;area&rdquo;: HTMLAreaElement;
+&ldquo;article&rdquo;: HTMLElement;
+&ldquo;aside&rdquo;: HTMLElement;
+&ldquo;audio&rdquo;: HTMLAudioElement;
+&ldquo;b&rdquo;: HTMLElement;
+&ldquo;base&rdquo;: HTMLBaseElement;
+&ldquo;basefont&rdquo;: HTMLBaseFontElement;
+&ldquo;bdi&rdquo;: HTMLElement;
+&ldquo;bdo&rdquo;: HTMLElement;
+&ldquo;blockquote&rdquo;: HTMLQuoteElement;
+&ldquo;body&rdquo;: HTMLBodyElement;
+&ldquo;br&rdquo;: HTMLBRElement;
+&ldquo;button&rdquo;: HTMLButtonElement;
+&ldquo;canvas&rdquo;: HTMLCanvasElement;
+&ldquo;caption&rdquo;: HTMLTableCaptionElement;
+&ldquo;cite&rdquo;: HTMLElement;
+&ldquo;code&rdquo;: HTMLElement;
+&ldquo;col&rdquo;: HTMLTableColElement;
+&ldquo;colgroup&rdquo;: HTMLTableColElement;
+&ldquo;data&rdquo;: HTMLDataElement;
+&ldquo;datalist&rdquo;: HTMLDataListElement;
+&ldquo;dd&rdquo;: HTMLElement;
+&ldquo;del&rdquo;: HTMLModElement;
+&ldquo;details&rdquo;: HTMLDetailsElement;
+&ldquo;dfn&rdquo;: HTMLElement;
+&ldquo;dialog&rdquo;: HTMLDialogElement;
+&ldquo;dir&rdquo;: HTMLDirectoryElement;
+&ldquo;div&rdquo;: HTMLDivElement;
+&ldquo;dl&rdquo;: HTMLDListElement;
+&ldquo;dt&rdquo;: HTMLElement;
+&ldquo;em&rdquo;: HTMLElement;
+&ldquo;embed&rdquo;: HTMLEmbedElement;
+&ldquo;fieldset&rdquo;: HTMLFieldSetElement;
+&ldquo;figcaption&rdquo;: HTMLElement;
+&ldquo;figure&rdquo;: HTMLElement;
+&ldquo;font&rdquo;: HTMLFontElement;
+&ldquo;footer&rdquo;: HTMLElement;
+&ldquo;form&rdquo;: HTMLFormElement;
+&ldquo;frame&rdquo;: HTMLFrameElement;
+&ldquo;frameset&rdquo;: HTMLFrameSetElement;
+&ldquo;h1&rdquo;: HTMLHeadingElement;
+&ldquo;h2&rdquo;: HTMLHeadingElement;
+&ldquo;h3&rdquo;: HTMLHeadingElement;
+&ldquo;h4&rdquo;: HTMLHeadingElement;
+&ldquo;h5&rdquo;: HTMLHeadingElement;
+&ldquo;h6&rdquo;: HTMLHeadingElement;
+&ldquo;head&rdquo;: HTMLHeadElement;
+&ldquo;header&rdquo;: HTMLElement;
+&ldquo;hgroup&rdquo;: HTMLElement;
+&ldquo;hr&rdquo;: HTMLHRElement;
+&ldquo;html&rdquo;: HTMLHtmlElement;
+&ldquo;i&rdquo;: HTMLElement;
+&ldquo;iframe&rdquo;: HTMLIFrameElement;
+&ldquo;img&rdquo;: HTMLImageElement;
+&ldquo;input&rdquo;: HTMLInputElement;
+&ldquo;ins&rdquo;: HTMLModElement;
+&ldquo;kbd&rdquo;: HTMLElement;
+&ldquo;label&rdquo;: HTMLLabelElement;
+&ldquo;legend&rdquo;: HTMLLegendElement;
+&ldquo;li&rdquo;: HTMLLIElement;
+&ldquo;link&rdquo;: HTMLLinkElement;
+&ldquo;main&rdquo;: HTMLElement;
+&ldquo;map&rdquo;: HTMLMapElement;
+&ldquo;mark&rdquo;: HTMLElement;
+&ldquo;marquee&rdquo;: HTMLMarqueeElement;
+&ldquo;menu&rdquo;: HTMLMenuElement;
+&ldquo;meta&rdquo;: HTMLMetaElement;
+&ldquo;meter&rdquo;: HTMLMeterElement;
+&ldquo;nav&rdquo;: HTMLElement;
+&ldquo;noscript&rdquo;: HTMLElement;
+&ldquo;object&rdquo;: HTMLObjectElement;
+&ldquo;ol&rdquo;: HTMLOListElement;
+&ldquo;optgroup&rdquo;: HTMLOptGroupElement;
+&ldquo;option&rdquo;: HTMLOptionElement;
+&ldquo;output&rdquo;: HTMLOutputElement;
+&ldquo;p&rdquo;: HTMLParagraphElement;
+&ldquo;param&rdquo;: HTMLParamElement;
+&ldquo;picture&rdquo;: HTMLPictureElement;
+&ldquo;pre&rdquo;: HTMLPreElement;
+&ldquo;progress&rdquo;: HTMLProgressElement;
+&ldquo;q&rdquo;: HTMLQuoteElement;
+&ldquo;rp&rdquo;: HTMLElement;
+&ldquo;rt&rdquo;: HTMLElement;
+&ldquo;ruby&rdquo;: HTMLElement;
+&ldquo;s&rdquo;: HTMLElement;
+&ldquo;samp&rdquo;: HTMLElement;
+&ldquo;script&rdquo;: HTMLScriptElement;
+&ldquo;section&rdquo;: HTMLElement;
+&ldquo;select&rdquo;: HTMLSelectElement;
+&ldquo;slot&rdquo;: HTMLSlotElement;
+&ldquo;small&rdquo;: HTMLElement;
+&ldquo;source&rdquo;: HTMLSourceElement;
+&ldquo;span&rdquo;: HTMLSpanElement;
+&ldquo;strong&rdquo;: HTMLElement;
+&ldquo;style&rdquo;: HTMLStyleElement;
+&ldquo;sub&rdquo;: HTMLElement;
+&ldquo;summary&rdquo;: HTMLElement;
+&ldquo;sup&rdquo;: HTMLElement;
+&ldquo;table&rdquo;: HTMLTableElement;
+&ldquo;tbody&rdquo;: HTMLTableSectionElement;
+&ldquo;td&rdquo;: HTMLTableDataCellElement;
+&ldquo;template&rdquo;: HTMLTemplateElement;
+&ldquo;textarea&rdquo;: HTMLTextAreaElement;
+&ldquo;tfoot&rdquo;: HTMLTableSectionElement;
+&ldquo;th&rdquo;: HTMLTableHeaderCellElement;
+&ldquo;thead&rdquo;: HTMLTableSectionElement;
+&ldquo;time&rdquo;: HTMLTimeElement;
+&ldquo;title&rdquo;: HTMLTitleElement;
+&ldquo;tr&rdquo;: HTMLTableRowElement;
+&ldquo;track&rdquo;: HTMLTrackElement;
+&ldquo;u&rdquo;: HTMLElement;
+&ldquo;ul&rdquo;: HTMLUListElement;
+&ldquo;var&rdquo;: HTMLElement;
+&ldquo;video&rdquo;: HTMLVideoElement;
+&ldquo;wbr&rdquo;: HTMLElement;
+}</p></li><li><p>结尾
+vue的ts分为运行时声明和类型声明，运行时声明是基于vue2延续并改进的，类型声明是基于ts的泛型实现的。个人更喜欢类型声明，更符合ts的书写规范，希望尤大早日将defineProps类型声明不能使用外部传入的类型问题早日解决
+最后：本篇整理的内容基于vue3.2.47，vue3.3.0已经走的了alpha.8阶段。点赞多的话后续随着vue的升级继续更新本篇文章</p></li></ol><p>作者：敲代码的彭于晏
+链接：https://juejin.cn/post/7231200657902207013
+来源：稀土掘金
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p></div><footer class=post-footer><ul class=post-tags></ul><nav class=paginav><a class=next href=https://aurorawxm.github.io/posts/go-for-%E5%BE%AA%E7%8E%AF%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/><span class=title>Next »</span><br><span>Go for 循环踩坑记录</span></a></nav><div class=share-buttons><a target=_blank rel="noopener noreferrer" aria-label="share Vue3+TS 使用指南 on twitter" href="https://twitter.com/intent/tweet/?text=Vue3%2bTS%20%e4%bd%bf%e7%94%a8%e6%8c%87%e5%8d%97&amp;url=https%3a%2f%2faurorawxm.github.io%2fposts%2fvue3%2bts-%25E4%25BD%25BF%25E7%2594%25A8%25E6%258C%2587%25E5%258D%2597%2f&amp;hashtags="><svg viewBox="0 0 512 512" height="30" width="30" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM195.519 424.544c135.939.0 210.268-112.643 210.268-210.268.0-3.218.0-6.437-.153-9.502 14.406-10.421 26.973-23.448 36.935-38.314-13.18 5.824-27.433 9.809-42.452 11.648 15.326-9.196 26.973-23.602 32.49-40.92-14.252 8.429-30.038 14.56-46.896 17.931-13.487-14.406-32.644-23.295-53.946-23.295-40.767.0-73.87 33.104-73.87 73.87.0 5.824.613 11.494 1.992 16.858-61.456-3.065-115.862-32.49-152.337-77.241-6.284 10.881-9.962 23.601-9.962 37.088.0 25.594 13.027 48.276 32.95 61.456-12.107-.307-23.448-3.678-33.41-9.196v.92c0 35.862 25.441 65.594 59.311 72.49-6.13 1.686-12.72 2.606-19.464 2.606-4.751.0-9.348-.46-13.946-1.38 9.349 29.426 36.628 50.728 68.965 51.341-25.287 19.771-57.164 31.571-91.8 31.571-5.977.0-11.801-.306-17.625-1.073 32.337 21.15 71.264 33.41 112.95 33.41z"/></svg></a><a target=_blank rel="noopener noreferrer" aria-label="share Vue3+TS 使用指南 on linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2faurorawxm.github.io%2fposts%2fvue3%2bts-%25E4%25BD%25BF%25E7%2594%25A8%25E6%258C%2587%25E5%258D%2597%2f&amp;title=Vue3%2bTS%20%e4%bd%bf%e7%94%a8%e6%8c%87%e5%8d%97&amp;summary=Vue3%2bTS%20%e4%bd%bf%e7%94%a8%e6%8c%87%e5%8d%97&amp;source=https%3a%2f%2faurorawxm.github.io%2fposts%2fvue3%2bts-%25E4%25BD%25BF%25E7%2594%25A8%25E6%258C%2587%25E5%258D%2597%2f"><svg viewBox="0 0 512 512" height="30" width="30" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM160.461 423.278V197.561h-75.04v225.717h75.04zm270.539.0V293.839c0-69.333-37.018-101.586-86.381-101.586-39.804.0-57.634 21.891-67.617 37.266v-31.958h-75.021c.995 21.181.0 225.717.0 225.717h75.02V297.222c0-6.748.486-13.492 2.474-18.315 5.414-13.475 17.767-27.434 38.494-27.434 27.135.0 38.007 20.707 38.007 51.037v120.768H431zM123.448 88.722C97.774 88.722 81 105.601 81 127.724c0 21.658 16.264 39.002 41.455 39.002h.484c26.165.0 42.452-17.344 42.452-39.002-.485-22.092-16.241-38.954-41.943-39.002z"/></svg></a><a target=_blank rel="noopener noreferrer" aria-label="share Vue3+TS 使用指南 on reddit" href="https://reddit.com/submit?url=https%3a%2f%2faurorawxm.github.io%2fposts%2fvue3%2bts-%25E4%25BD%25BF%25E7%2594%25A8%25E6%258C%2587%25E5%258D%2597%2f&title=Vue3%2bTS%20%e4%bd%bf%e7%94%a8%e6%8c%87%e5%8d%97"><svg viewBox="0 0 512 512" height="30" width="30" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zM446 265.638c0-22.964-18.616-41.58-41.58-41.58-11.211.0-21.361 4.457-28.841 11.666-28.424-20.508-67.586-33.757-111.204-35.278l18.941-89.121 61.884 13.157c.756 15.734 13.642 28.29 29.56 28.29 16.407.0 29.706-13.299 29.706-29.701.0-16.403-13.299-29.702-29.706-29.702-11.666.0-21.657 6.792-26.515 16.578l-69.105-14.69c-1.922-.418-3.939-.042-5.585 1.036-1.658 1.073-2.811 2.761-3.224 4.686l-21.152 99.438c-44.258 1.228-84.046 14.494-112.837 35.232-7.468-7.164-17.589-11.591-28.757-11.591-22.965.0-41.585 18.616-41.585 41.58.0 16.896 10.095 31.41 24.568 37.918-.639 4.135-.99 8.328-.99 12.576.0 63.977 74.469 115.836 166.33 115.836s166.334-51.859 166.334-115.836c0-4.218-.347-8.387-.977-12.493 14.564-6.47 24.735-21.034 24.735-38.001zM326.526 373.831c-20.27 20.241-59.115 21.816-70.534 21.816-11.428.0-50.277-1.575-70.522-21.82-3.007-3.008-3.007-7.882.0-10.889 3.003-2.999 7.882-3.003 10.885.0 12.777 12.781 40.11 17.317 59.637 17.317 19.522.0 46.86-4.536 59.657-17.321 3.016-2.999 7.886-2.995 10.885.008 3.008 3.011 3.003 7.882-.008 10.889zm-5.23-48.781c-16.373.0-29.701-13.324-29.701-29.698.0-16.381 13.328-29.714 29.701-29.714 16.378.0 29.706 13.333 29.706 29.714.0 16.374-13.328 29.698-29.706 29.698zM160.91 295.348c0-16.381 13.328-29.71 29.714-29.71 16.369.0 29.689 13.329 29.689 29.71.0 16.373-13.32 29.693-29.689 29.693-16.386.0-29.714-13.32-29.714-29.693z"/></svg></a><a target=_blank rel="noopener noreferrer" aria-label="share Vue3+TS 使用指南 on facebook" href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2faurorawxm.github.io%2fposts%2fvue3%2bts-%25E4%25BD%25BF%25E7%2594%25A8%25E6%258C%2587%25E5%258D%2597%2f"><svg viewBox="0 0 512 512" height="30" width="30" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H342.978V319.085h66.6l12.672-82.621h-79.272v-53.617c0-22.603 11.073-44.636 46.58-44.636H425.6v-70.34s-32.71-5.582-63.982-5.582c-65.288.0-107.96 39.569-107.96 111.204v62.971h-72.573v82.621h72.573V512h-191.104c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892z"/></svg></a><a target=_blank rel="noopener noreferrer" aria-label="share Vue3+TS 使用指南 on whatsapp" href="https://api.whatsapp.com/send?text=Vue3%2bTS%20%e4%bd%bf%e7%94%a8%e6%8c%87%e5%8d%97%20-%20https%3a%2f%2faurorawxm.github.io%2fposts%2fvue3%2bts-%25E4%25BD%25BF%25E7%2594%25A8%25E6%258C%2587%25E5%258D%2597%2f"><svg viewBox="0 0 512 512" height="30" width="30" fill="currentcolor"><path d="M449.446.0C483.971.0 512 28.03 512 62.554v386.892C512 483.97 483.97 512 449.446 512H62.554c-34.524.0-62.554-28.03-62.554-62.554V62.554c0-34.524 28.029-62.554 62.554-62.554h386.892zm-58.673 127.703c-33.842-33.881-78.847-52.548-126.798-52.568-98.799.0-179.21 80.405-179.249 179.234-.013 31.593 8.241 62.428 23.927 89.612l-25.429 92.884 95.021-24.925c26.181 14.28 55.659 21.807 85.658 21.816h.074c98.789.0 179.206-80.413 179.247-179.243.018-47.895-18.61-92.93-52.451-126.81zM263.976 403.485h-.06c-26.734-.01-52.954-7.193-75.828-20.767l-5.441-3.229-56.386 14.792 15.05-54.977-3.542-5.637c-14.913-23.72-22.791-51.136-22.779-79.287.033-82.142 66.867-148.971 149.046-148.971 39.793.014 77.199 15.531 105.329 43.692 28.128 28.16 43.609 65.592 43.594 105.4-.034 82.149-66.866 148.983-148.983 148.984zm81.721-111.581c-4.479-2.242-26.499-13.075-30.604-14.571-4.105-1.495-7.091-2.241-10.077 2.241-2.986 4.483-11.569 14.572-14.182 17.562-2.612 2.988-5.225 3.364-9.703 1.12-4.479-2.241-18.91-6.97-36.017-22.23C231.8 264.15 222.81 249.484 220.198 245s-.279-6.908 1.963-9.14c2.016-2.007 4.48-5.232 6.719-7.847 2.24-2.615 2.986-4.484 4.479-7.472 1.493-2.99.747-5.604-.374-7.846-1.119-2.241-10.077-24.288-13.809-33.256-3.635-8.733-7.327-7.55-10.077-7.688-2.609-.13-5.598-.158-8.583-.158-2.986.0-7.839 1.121-11.944 5.604-4.105 4.484-15.675 15.32-15.675 37.364.0 22.046 16.048 43.342 18.287 46.332 2.24 2.99 31.582 48.227 76.511 67.627 10.685 4.615 19.028 7.371 25.533 9.434 10.728 3.41 20.492 2.929 28.209 1.775 8.605-1.285 26.499-10.833 30.231-21.295 3.732-10.464 3.732-19.431 2.612-21.298-1.119-1.869-4.105-2.99-8.583-5.232z"/></svg></a><a target=_blank rel="noopener noreferrer" aria-label="share Vue3+TS 使用指南 on telegram" href="https://telegram.me/share/url?text=Vue3%2bTS%20%e4%bd%bf%e7%94%a8%e6%8c%87%e5%8d%97&amp;url=https%3a%2f%2faurorawxm.github.io%2fposts%2fvue3%2bts-%25E4%25BD%25BF%25E7%2594%25A8%25E6%258C%2587%25E5%258D%2597%2f"><svg viewBox="2 2 28 28" height="30" width="30" fill="currentcolor"><path d="M26.49 29.86H5.5a3.37 3.37.0 01-2.47-1 3.35 3.35.0 01-1-2.47V5.48A3.36 3.36.0 013 3 3.37 3.37.0 015.5 2h21A3.38 3.38.0 0129 3a3.36 3.36.0 011 2.46V26.37a3.35 3.35.0 01-1 2.47 3.38 3.38.0 01-2.51 1.02zm-5.38-6.71a.79.79.0 00.85-.66L24.73 9.24a.55.55.0 00-.18-.46.62.62.0 00-.41-.17q-.08.0-16.53 6.11a.59.59.0 00-.41.59.57.57.0 00.43.52l4 1.24 1.61 4.83a.62.62.0 00.63.43.56.56.0 00.4-.17L16.54 20l4.09 3A.9.9.0 0021.11 23.15zM13.8 20.71l-1.21-4q8.72-5.55 8.78-5.55c.15.0.23.0.23.16a.18.18.0 010 .06s-2.51 2.3-7.52 6.8z"/></svg></a></div></footer></article></main><footer class=footer><span>&copy; 2023 <a href=https://aurorawxm.github.io/>AuroraWxm</a></span>
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+        <a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg></a><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script></body></html>

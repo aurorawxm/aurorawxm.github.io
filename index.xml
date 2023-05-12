@@ -10,7 +10,28 @@
       <link>https://aurorawxm.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 09 May 2023 05:47:00 +0000</lastBuildDate><atom:link href="https://aurorawxm.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 May 2023 03:03:06 +0000</lastBuildDate><atom:link href="https://aurorawxm.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vue3&#43;TS 使用指南</title>
+      <link>https://aurorawxm.github.io/posts/vue3&#43;ts-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Fri, 12 May 2023 03:03:06 +0000</pubDate>
+      
+      <guid>https://aurorawxm.github.io/posts/vue3&#43;ts-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</guid>
+      <description>vue3相比vue2对ts拥有更友好的支持，当初在用vue2写ts时各种装饰器，现在只要使用标签就可以直接使用ts。ts虽然写的时候麻烦了点，但是真的香。 如果不知道怎么搭建vue3的ts项目，可参考我的上一篇文章：Vite4.3+Typescript+Vue3+Pinia 最新搭建企业级前端项目
+ref 传入一个泛型参数 值 ref
+jsconst initCode = ref(&amp;lsquo;200&amp;rsquo;); //默认推导出string类型
+//或者手动定义更复杂的类型 const initCode = ref&amp;lt;string | number&amp;gt;(&amp;lsquo;200&amp;rsquo;);
+模板 ref
+js
+组件 ref
+js 如果子组件使用，默认是全关闭的，子组件需使用defineExpose定义父组件能访问的属性 2. reactive
+定义接口
+新建src/types/user.ts（在types文件夹下新建user.ts） jsexport interface User { name: string; age: number; }
+使用
+js import { reactive } from &amp;lsquo;vue&amp;rsquo;; import type { User } from &amp;lsquo;@/types/user&amp;rsquo;;
+//reactive 会隐式地从它的参数中推导类型 //也可以使用接口直接给变量定义类型 const user: User = reactive({ name: &amp;lsquo;zhangsan&amp;rsquo;, age: 20, }); 提示：不推荐使用 reactive() 的泛型参数，因为处理了深层次 ref 解包的返回值与泛型参数的类型不同 3.</description>
+    </item>
+    
     <item>
       <title>Go for 循环踩坑记录</title>
       <link>https://aurorawxm.github.io/posts/go-for-%E5%BE%AA%E7%8E%AF%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/</link>
