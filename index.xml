@@ -10,7 +10,20 @@
       <link>https://aurorawxm.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 12 May 2023 03:03:06 +0000</lastBuildDate><atom:link href="https://aurorawxm.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 13 May 2023 02:17:54 +0000</lastBuildDate><atom:link href="https://aurorawxm.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vue3.3 正式发布！</title>
+      <link>https://aurorawxm.github.io/posts/vue3.3-%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83/</link>
+      <pubDate>Sat, 13 May 2023 02:17:54 +0000</pubDate>
+      
+      <guid>https://aurorawxm.github.io/posts/vue3.3-%E6%AD%A3%E5%BC%8F%E5%8F%91%E5%B8%83/</guid>
+      <description>请注意，对复杂类型支持是基于 AST 的，因此不是 100% 全面的。一些需要实际类型分析的复杂类型，例如条件类型，不受支持。您可以使用条件类型来定义单个 prop 的类型，但不能用于整个 props 对象。
+详情： PR#8083
+泛型组件 使用 的组件现在可以通过 generic 属性接受泛型类型参数： HTML defineProps&amp;lt;{ items: T[] selected: T }&amp;gt;() generic 的值与 TypeScript 中 &amp;lt;&amp;hellip;&amp;gt; 之间的参数列表用法完全相同。例如，您可以使用多个参数、extend 约束、默认类型和引用导入的类型： html import type { Item } from &amp;lsquo;./types&amp;rsquo; defineProps&amp;lt;{ id: T list: U[] }&amp;gt;() 此功能在最新版本的 volar / vue-tsc 中默认启用。
+相关讨论： RFC#436 相关 PR： generic defineComponent() - PR#7963
+defineEmits 以前，defineEmits 的类型参数仅支持调用签名语法： js// 以前 const emit = defineEmits&amp;lt;{ (e: &amp;lsquo;foo&amp;rsquo;, id: number): void (e: &amp;lsquo;bar&amp;rsquo;, name: string, &amp;hellip;rest: any[]): void }&amp;gt;()</description>
+    </item>
+    
     <item>
       <title>Vue3&#43;TS 使用指南</title>
       <link>https://aurorawxm.github.io/posts/vue3&#43;ts-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</link>
